@@ -54,17 +54,18 @@ class ICA
 	void Colony_Imper_swap();
 	void ColonyCostCalc();
 	void Merge_Similar_Impers();
+	void InitializeCountries();
+	void InitializeImpires();
+	void Eliminate_Weakest_Imper();
 
 public:
 	ICA(void);
 	ICA(list<int> ParIndex, list<int> ParamVal, int CountryNum, int ImpNum, int DecadeNum,double RevolutionRate, bool IsEqualParamValAllowed, const CostfunType &CostFunc, double inAcceptableCostVal, string logfileName);
 	~ICA(void);
-	void InitializeCountries();
-	void InitializeImpires();
 	void InitializeCountries(map<int,int> *Countries, int n);
 	void InitializeCountries(list<map<int,int>> Countries);
 	double Compet(map<int,int> &Imperialist);
-	void Eliminate_Weakest_Imper();
+
 
 };
 

@@ -199,13 +199,20 @@ void ICA::Eliminate_Weakest_Imper(){
 	m_ImperList.back().ColonyList.pop_front();//eliminate from weekList
 }
 void ICA::Merge_Similar_Impers(){
-/*	for(list<Imper_Profile>::iterator it=m_ImperList.begin();it!=m_ImperList.end();it++){
+	for(list<Imper_Profile>::iterator it=m_ImperList.begin();it!=m_ImperList.end();it++){
 		double key=it->Imper.Cost;
 		list<Imper_Profile>::iterator it1=it;
-		advance(it1,1);
-		list<Imper_Profile>::iterator it2=find_if(it1,m_ImperList.end(), [key](const Imper_Profile & m) -> bool { return m.Imper.Cost ==key ; });
+		while(it1!=m_ImperList.end()){
+			advance(it1,1);
+			list<Imper_Profile>::iterator it2=find_if(it1,m_ImperList.end(), [key](const Imper_Profile & m) -> bool { return m.Imper.Cost ==key ; });
+			if(it2!=m_ImperList.end()){ 
+				it->ColonyList.insert(it->ColonyList.end(),it2->ColonyList.begin(), it2->ColonyList.end());
+				it->ColonyList.push_back(it2->Imper);
+				m_ImperList.erase(it2);
+			}
+		}
 		
-	}*/
+	}
 }
 double ICA::Compet(map<int,int> &Imperialist){
 	int n=0;
