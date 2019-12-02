@@ -12,4 +12,4 @@ an Imperialist competition algorithm can be implemented for a problem. The const
     CostFunc: fitness function address that must return a double value.
     inAcceptableCostVal: unacceptable maximum value for cost function( if a country has a cost value as equal as or grater than from it. will be eliminated in the execution cycle.
     logfileName: file name for reporting the operations
-after the creation of an ICA object via calling the Compet() function will return to you the best answer in the map format of<int ,int>
+after the creation of an ICA object via calling the Compet() function, the best answer in the map format of<int ,int> will return to you 
